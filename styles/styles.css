@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+}
+
+.mainBody {
+    padding: 2em;
+    margin: 2em;
+    width: 75%;
+}
+
+.PCExample {
+    height: 40em;
+}
