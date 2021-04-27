@@ -1,0 +1,15 @@
+{
+  "name": "ahlquistdev/Dating",
+  "description": "School project",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Hunter Ahlquist",
+      "email": "contact@hunterahlquist.com"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "3.7.*"
+  }
+}
