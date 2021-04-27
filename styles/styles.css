@@ -9,5 +9,9 @@ html, body {
 }
 
 .PCExample {
-    height: 40em;
+    height: 45em;
+}
+
+blockquote {
+    font-style: italic;
 }
