@@ -10,7 +10,7 @@ html, body {
     padding: 2em;
     margin: 2em;
     width: 75%;
-    background-color: #4a4a4a;
+    background-color: #323232;
     border-color: #444444 !important;
     box-shadow: 20px 20px 60px #0e0e0e, -20px -20px 60px #323232;
 }
@@ -24,5 +24,5 @@ nav {
 }
 
 hr {
-    color: lightgray;
+    background-color: lightgray;
 }
