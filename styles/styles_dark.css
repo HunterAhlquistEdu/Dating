@@ -39,9 +39,24 @@ hr {
     box-shadow: 20px 20px 60px #1f1f1f, -20px -20px 60px #4a4a4a;
     background-color: #4a4a4a;
     padding: 2rem 2rem !important;
+    margin-top: 4em;
+    margin-bottom: 4em;
 }
 
 .control-label {
     margin-top: 0.5em;
     font-size: 16pt;
+}
+
+.btn {
+    margin: 1em;
+}
+
+.interestBox {
+    padding: 1em;
+    margin: 0.5em;
+    background-color: #4a4a4a;
+    border-radius: 10px;
+    box-shadow: 10px 10px 60px #1f1f1f, -10px -10px 60px #4a4a4a;
+    user-select: none;
 }
