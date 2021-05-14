@@ -56,7 +56,10 @@ hr {
     padding: 1em;
     margin: 0.5em;
     background-color: #4a4a4a;
-    border-radius: 10px;
     box-shadow: 10px 10px 60px #1f1f1f, -10px -10px 60px #4a4a4a;
     user-select: none;
+}
+
+.info-overview {
+    background-color: #323232;
 }

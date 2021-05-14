@@ -1,6 +1,8 @@
-<include href="views/header.html">
+<!doctype html>
+<html lang="en">
+<include href="views/header.html"></include>
 <body>
-<include href="views/nav.html">
+<include href="views/nav.html"></include>
     <div class="d-flex justify-content-center">
         <div class="mainBody row rounded">
             <div class="container-flex input-area">
@@ -14,13 +16,12 @@
                 <div class="row">
                     <div class="col-sm-12">
                     <repeat group="{{ @interests }}" value="{{ @interest }}">
-                        <label class="control-label interestBox"><input
+                        <label class="control-label interestBox rounded"><input
                                 type="checkbox"
-                                name="meal"
+                                name="interests[]"
                                 id="{{ @interest }}"
-                                value="{{ @interest }}"
-                            > {{ ucfirst(@interest) }}
-                            </input>
+                                value="{{ @interest }}">
+                            {{ ucfirst(@interest) }}
                         </label>
                     </repeat>
 

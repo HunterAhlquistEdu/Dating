@@ -1,26 +1,52 @@
-<include href="views/header.html">
+<!doctype html>
+<html lang="en">
+<include href="views/header.html"></include>
 <body>
-<include href="views/nav.html">
+<include href="views/nav.html"></include>
     <div class="d-flex justify-content-center">
         <div class="mainBody row rounded">
             <div class="container-flex input-area">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="display-3">Use for Computer</h1>
+                        <h1 class="display-3">Review your Profile</h1>
                         <hr>
                     </div>
                 </div>
                 <form action="#" method="post" class="form-horizontal">
                 <div class="row">
-                    <div class="col-sm-6">
-
+                    <div class="col-sm-8">
+                        <div class="container-flex info-overview rounded border border-secondary">
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0 border-top-0">{{ @SESSION.firstname }} {{ @SESSION.lastname }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">Budget: ${{ @SESSION.budget }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">Prefered CPU brand: {{ @SESSION.cpubrand }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">Email address: {{ @SESSION.email }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">Phone number: {{ @SESSION.phone }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">State: {{ @SESSION.state }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">State: {{ @SESSION.city }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">Zip/Postal code: {{ @SESSION.postal }}</p>
+                            <p class="container infoLine border border-secondary border-right-0 border-left-0 border-bottom-0">
+                                Uses for computer:
+                                <repeat group="{{ @SESSION.interests }}" value="{{ @interest }}">
+                                    {{ ucfirst(@interest) }},
+                                </repeat>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-
+                    <div class="col-sm-4">
+                        <div class="jumbotron privacy-notice">
+                            <b>Note: </b> All information entered is subject to our <a href="privacy">privacy policy</a>,
+                            and will not be
+                            publicly shared.
+                        </div>
+                        <h3 class="display-6">Shipping address</h3>
+                        <div class="container">
+                            <p class="border border-secondary rounded">1234 52nd Street SE, Auburn. Apt. D</p>
+                        </div>
                     </div>
                 </div>
-                <input class="btn btn-primary btn-lg float-right" type="submit" value="Next">
-                <a class="btn btn-secondary btn-lg float-left">Back</a>
+                    <div class="col text-center">
+                        <a class="btn btn-primary btn-lg text-white">Find the Perfect Computer</a>
+                    </div>
                 </form>
             </div>
 

@@ -35,7 +35,7 @@ $f3->route('GET|POST /create-account',
             $_SESSION['firstname'] = $_POST['firstname'];
             $_SESSION['lastname'] = $_POST['lastname'];
             $_SESSION['budget'] = $_POST['budget'];
-            $_SESSION['cpu-brand'] = $_POST['cpu-brand'];
+            $_SESSION['cpubrand'] = $_POST['cpu-brand'];
             $_SESSION['email'] = $_POST['email'];
 
             header('location: create-shipping');
@@ -51,6 +51,7 @@ $f3->route('GET|POST /create-shipping',
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['phone'] = $_POST['phone'];
             $_SESSION['state'] = $_POST['state'];
+            $_SESSION['city'] = $_POST['city'];
             $_SESSION['address'] = $_POST['address'];
             $_SESSION['postal'] = $_POST['postal'];
 
@@ -64,12 +65,26 @@ $f3->route('GET|POST /create-shipping',
 );
 $f3->route('GET|POST /create-interests',
     function($f3) {
-        $f3->set('interests', getInterests());
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $_SESSION['interests'] = $_POST['interests'];
 
+            header('location: review');
+        }
+
+        $f3->set('interests', getInterests());
 
         //Render page
         $view = new Template();
         echo $view->render("views/cinterests.html");
+    }
+);
+$f3->route('GET|POST /review',
+    function($f3) {
+        $f3->set('chosenInterests', $_SESSION['interests']);
+
+        //Render page
+        $view = new Template();
+        echo $view->render("views/profilereview.html");
     }
 );
 
