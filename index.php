@@ -1,4 +1,11 @@
 <?php
+/**
+ * Hunter Ahlquist
+ * 5/8/2021
+ *
+ * F3 initialization index page
+ */
+
 //Turn on error-reporting
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
