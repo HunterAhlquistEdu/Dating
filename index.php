@@ -10,13 +10,14 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//Start a session
-session_start();
-
-
 //Require necessary files
 require_once ('vendor/autoload.php');
 require_once ('model/data_layer.php');
+require_once ('model/validations.php');
+
+//Start a session
+session_start();
+
 
 //initialize F3
 $f3 = Base::instance();
@@ -34,18 +35,34 @@ $f3->route('GET /home',
     }
 );
 $f3->route('GET|POST /create-account',
-    function() {
-        //clear session
-        $_SESSION = array();
+    function($f3) {
+
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $_SESSION['firstname'] = $_POST['firstname'];
-            $_SESSION['lastname'] = $_POST['lastname'];
-            $_SESSION['budget'] = $_POST['budget'];
-            $_SESSION['cpubrand'] = $_POST['cpu-brand'];
-            $_SESSION['email'] = $_POST['email'];
+            $valid = true;
 
-            header('location: create-shipping');
+            //validation and errors
+            if (!validName(trim($_POST['firstname'] . ' ' . $_POST['lastname']))) {
+                $valid = false;
+                $f3->set('nameErr', "Please enter a valid name.");
+            }
+            if (!validBudget($_POST['budget'])){
+                $valid = false;
+                $f3->set('budgetErr', "Please enter a budget between 800 and 5000.");
+            }
+            if (!validEmail($_POST['email'])){
+                $valid = false;
+                $f3->set('emailErr', "Please enter a valid email address.");
+            }
+            $_SESSION['firstname'] = trim($_POST['firstname']);
+            $_SESSION['lastname']  = trim($_POST['lastname']);
+            $_SESSION['budget']    = trim($_POST['budget']);
+            $_SESSION['cpubrand']  = trim($_POST['cpu-brand']);
+            $_SESSION['email']     = trim($_POST['email']);
+
+            if ($valid) {
+                header('location: create-shipping');
+            }
         }
 
         //Render page
@@ -56,13 +73,17 @@ $f3->route('GET|POST /create-account',
 $f3->route('GET|POST /create-shipping',
     function() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-            $_SESSION['phone'] = $_POST['phone'];
-            $_SESSION['state'] = $_POST['state'];
-            $_SESSION['city'] = $_POST['city'];
-            $_SESSION['address'] = $_POST['address'];
-            $_SESSION['postal'] = $_POST['postal'];
+            $valid = true;
 
-            header('location: create-interests');
+            if ($valid){
+                $_SESSION['phone'] = $_POST['phone'];
+                $_SESSION['state'] = $_POST['state'];
+                $_SESSION['city'] = $_POST['city'];
+                $_SESSION['address'] = $_POST['address'];
+                $_SESSION['postal'] = $_POST['postal'];
+
+                header('location: create-interests');
+            }
         }
 
         //Render page

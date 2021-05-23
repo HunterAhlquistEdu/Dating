@@ -25,15 +25,19 @@ gets information of the new user
 
                             <div class="col-sm-10">
                                 <label for="firstname" class="control-label">First name</label>
-                                <input class="form-control" type="text" name="firstname" id="firstname">
+                                <input class="form-control" type="text" name="firstname" id="firstname" value="{{ $_SESSION['firstname'] }}">
+                                <span style='color: darkred;'>{{ @nameErr }}</span>
                             </div>
                             <div class="col-sm-10">
                                 <label for="lastname" class="control-label">Last name</label>
-                                <input class="form-control" type="text" name="lastname" id="lastname">
+                                <input class="form-control" type="text" name="lastname" id="lastname" value="{{ $_SESSION['lastname'] }}">
+                                <span style='color: darkred;'>{{ @nameErr }}</span>
+
                             </div>
                             <div class="col-sm-10">
                                 <label for="budget" class="control-label">Budget</label>
-                                <input class="form-control" type="text" name="budget" id="budget">
+                                <input class="form-control" type="text" name="budget" id="budget" value="{{ $_SESSION['budget'] }}">
+                                <span style='color: darkred;'>{{ @budgetErr }}</span>
                             </div>
                             <div class="col-sm-10">
                                 <label class="control-label">Processor brand preference</label></br>
@@ -45,11 +49,12 @@ gets information of the new user
                                        value="Intel"> Intel</br>
                                 <input type="radio" name="cpu-brand"
                                        id="Any"
-                                       value="Any"> Any</br>
+                                       value="Any" checked> Any</br>
                             </div>
                             <div class="col-sm-10">
                                 <label for="email" class="control-label">Email</label>
-                                <input class="form-control" type="text" name="email" id="email">
+                                <input class="form-control" type="text" name="email" id="email" value="{{ $_SESSION['email'] }}">
+                                <span style='color: darkred;'>{{ @emailErr }}</span>
                             </div>
 
 
