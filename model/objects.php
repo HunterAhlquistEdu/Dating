@@ -33,35 +33,165 @@ class member {
         $this->postal = $postal;
     }
 
-    public function getFirstName() {
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
         return $this->firstName;
     }
-    public function setFirstName($firstName) {
+
+    /**
+     * @param mixed $firstName
+     */
+    public function setFirstName($firstName)
+    {
         $this->firstName = $firstName;
     }
 
-    public function getLastName() {
-        return $this->firstName;
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
     }
-    public function setLastName($lastName) {
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName)
+    {
         $this->lastName = $lastName;
     }
 
-    public function getBudget() {
+    /**
+     * @return mixed
+     */
+    public function getBudget()
+    {
         return $this->budget;
     }
-    public function setBudget($budget) {
+
+    /**
+     * @param mixed $budget
+     */
+    public function setBudget($budget)
+    {
         $this->budget = $budget;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCpuBrand()
+    {
+        return $this->cpuBrand;
+    }
+
+    /**
+     * @param mixed $cpuBrand
+     */
+    public function setCpuBrand($cpuBrand)
+    {
+        $this->cpuBrand = $cpuBrand;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInterests()
+    {
+        return $this->interests;
+    }
+
+    /**
+     * @param mixed $interests
+     */
+    public function setInterests($interests)
+    {
+        $this->interests = $interests;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
+
+    public function getFullAddress() {
+        return [
+            "address" => $this->address,
+            "city" => $this->city,
+            "state" => $this->state,
+            "postal" => $this->postal,
+        ];
+    }
+    public function setFullAddress($address = null, $city = null, $state = null, $postal = null) {
+        if ($address != null){
+            $this->address = $address;
+        }
+        if ($city != null){
+            $this->city = $city;
+        }
+        if ($state != null){
+            $this->state = $state;
+        }
+        if ($postal != null){
+            $this->postal = $postal;
+        }
     }
 }
 
 //this is a monthly subscription
 class prosPlus extends member {
     //active service addons
-    private $servAddons; //boolean[] - extended warranty, technical support, discounted accessories
+    private $servAddons;
+
+    /**
+     * @return mixed
+     */
+    public function getServAddons()
+    {
+        return $this->servAddons;
+    }
+
+    /**
+     * @param mixed $servAddons
+     */
+    public function setServAddons($servAddons)
+    {
+        $this->servAddons = $servAddons;
+    } //boolean[] - extended warranty, technical support, discounted accessories
 
     public function __construct($servAddons)
     {
-
+        $this->servAddons = $servAddons;
     }
 }
