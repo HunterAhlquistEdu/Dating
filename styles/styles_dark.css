@@ -63,7 +63,7 @@ hr {
     padding: 1em;
     margin: 0.5em;
     background-color: #4a4a4a;
-    box-shadow: 10px 10px 60px #1f1f1f, -10px -10px 60px #4a4a4a;
+    box-shadow: 4px 4px 20px #1f1f1f, -4px -4px 25px #4a4a4a;
     user-select: none;
 }
 

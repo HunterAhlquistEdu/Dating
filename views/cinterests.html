@@ -15,7 +15,7 @@ View for adding information about what your computer is used for
             <div class="container-flex input-area">
                 <div class="row">
                     <div class="col-sm-12">
-                        <h1 class="display-3">Use for Computer</h1>
+                        <h1 class="display-3">Uses for Computer</h1>
                         <hr>
                     </div>
                 </div>
@@ -31,11 +31,37 @@ View for adding information about what your computer is used for
                             {{ ucfirst(@interest) }}
                         </label>
                     </repeat>
-
                     </div>
+                    <a class="navbar-brand" style="margin-top: 2em;"><i class="h2">Prebuilt</i> Pros<sup style="color: goldenrod; text-shadow: 0px 0px 5px goldenrod, 0px 0px 5px goldenrod, 0px 0px 10px goldenrod;">+</sup> exclusive deals</a>
+                    <div class="container-fluid">
+                        <label class="control-label interestBox rounded"><input
+                                type="checkbox"
+                                name="office"
+                                id="office"
+                                value="unchecked">
+                            Office 356 - 1 year plan (50% off)
+                        </label>
+                        <label class="control-label interestBox rounded"><input
+                                type="checkbox"
+                                name="adobe"
+                                id="adobe"
+                                value="unchecked">
+                            Adobe CC - 1 year plan (50% off)
+                        </label>
+                        <label class="control-label interestBox rounded"><input
+                                type="checkbox"
+                                name="ssd"
+                                id="ssd"
+                                value="unchecked">
+                            1TB Samsung 860 Evo SSD (addon, 35% off)
+                        </label>
+                        <p class="text-secondary">legal disclaimer: this website made for educational purposes, and all rights belong to the respective owners, and blah blah blah...</p>
+                    </div>
+
                 </div>
+
                 <input class="btn btn-primary btn-lg float-right" type="submit" value="Next">
-                    <a class="btn btn-secondary btn-lg float-left" href="create-shipping">Back</a>
+                <a class="btn btn-secondary btn-lg float-left" href="create-shipping">Back</a>
                 </form>
             </div>
 

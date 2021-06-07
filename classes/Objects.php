@@ -1,5 +1,5 @@
 <?php
-class member {
+class Member {
     //User info
     private $firstName; //string
     private $lastName; //string
@@ -17,20 +17,13 @@ class member {
     private $address; //string
     private $postal; //string - because some postal codes in the world may use symbols or letters
 
-    public function __construct($firstName, $lastName, $budget, $cpuBrand, $interests, $email, $phone, $state, $city,
-                                $address, $postal)
+    public function __construct($firstName, $lastName, $budget, $cpuBrand, $email)
     {
         $this->firstName = $firstName;
         $this->lastName = $lastName;
         $this->budget = $budget;
         $this->cpuBrand = $cpuBrand;
-        $this->interests = $interests;
         $this->email = $email;
-        $this->phone = $phone;
-        $this->state = $state;
-        $this->city = $city;
-        $this->address = $address;
-        $this->postal = $postal;
     }
 
     /**
@@ -170,9 +163,10 @@ class member {
 }
 
 //this is a monthly subscription
-class prosPlus extends member {
+class ProsPlus extends Member {
     //active service addons
     private $servAddons;
+    private $dealAddons;
 
     /**
      * @return mixed
@@ -190,8 +184,5 @@ class prosPlus extends member {
         $this->servAddons = $servAddons;
     } //boolean[] - extended warranty, technical support, discounted accessories
 
-    public function __construct($servAddons)
-    {
-        $this->servAddons = $servAddons;
-    }
+
 }

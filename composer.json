@@ -11,5 +11,8 @@
   ],
   "require": {
     "bcosca/fatfree-core": "3.7.*"
+  },
+  "autoload": {
+    "files": ["classes/Controller.php", "classes/Objects.php", "classes/validations.php"]
   }
 }
