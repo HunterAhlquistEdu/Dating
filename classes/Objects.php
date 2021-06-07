@@ -171,6 +171,22 @@ class ProsPlus extends Member {
     /**
      * @return mixed
      */
+    public function getDealAddons()
+    {
+        return $this->dealAddons;
+    }
+
+    /**
+     * @param mixed $dealAddons
+     */
+    public function setDealAddons($dealAddons)
+    {
+        $this->dealAddons = $dealAddons;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getServAddons()
     {
         return $this->servAddons;

@@ -66,6 +66,11 @@ class Controller {
     function interestsView($f3) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['interests'] = $_POST['interests'];
+            if (get_class($_SESSION['member']) == ProsPlus::class) {
+                $deals = [$_POST['office'], $_POST['adobe'], $_POST['ssd']];
+                $_SESSION['member']->setDealAddons($deals);
+            }
+
 
             $f3->reroute('/review');
         }
@@ -78,6 +83,7 @@ class Controller {
     }
 
     function reviewView($f3) {
+        $f3->set('member', $_SESSION['member']);
         $f3->set('chosenInterests', $_SESSION['interests']);
 
         //Render page
